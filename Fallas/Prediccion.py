@@ -43,13 +43,18 @@ def EjecutarP( hilo, comunidad , ip , port , name  ):
 
 
 	ultimo=rrdtool.last(str(agentPath + name+fname))
+
+	inicio=ultimo-300
+	ayerInicio=(inicio-300)
+	ayerFinal=ultimo-300
+	primero=rrdtool.first(str(agentPath + name + fname))
 	#cambia el valor de alfa
 	rrdtool.tune(str(agentPath + name + fname),'--alpha','0.8')
 	#rrdtool.tune(str(agentPath + name + fname),'--beta','0.1')
 	#rrdtool.tune(str(agentPath + name + fname),'--gamma','0.1')
 
 	ret = rrdtool.graphv(str(agentPath+name)+"prediccion.png",
-						'--start', str(ultimo-100), '--end', str(ultimo+5), '--title=' + title,
+						'--start', str(inicio), '--end', str(ultimo+5), '--title=' + title,
 						"--vertical-label=Bytes/s",
 						'--slope-mode',
 						"DEF:obs="       + str(agentPath + name + fname) + ":inoctets:AVERAGE",
@@ -57,16 +62,20 @@ def EjecutarP( hilo, comunidad , ip , port , name  ):
 						"DEF:pred="      + str(agentPath + name + fname) + ":inoctets:HWPREDICT",
 						"DEF:dev="       + str(agentPath + name + fname) + ":inoctets:DEVPREDICT",
 						"DEF:fail="      + str(agentPath + name + fname) + ":inoctets:FAILURES",
-
+						"DEF:yvalue="+str(agentPath + name + fname) +":inoctets:AVERAGE:start=" + str(ayerInicio) + ":end=" + str(ayerFinal),
+              			'SHIFT:yvalue:300',
 					 #"RRA:DEVSEASONAL:1d:0.1:2",
 					 #"RRA:DEVPREDICT:5d:5",
 					 #"RRA:FAILURES:1d:7:9:5""
+					 	"CDEF:scaledh=yvalue,8,*",
 						"CDEF:scaledobs=obs,8,*",
 						"CDEF:upper=pred,dev,2,*,+",
 						"CDEF:lower=pred,dev,2,*,-",
 						"CDEF:scaledupper=upper,8,*",
 						"CDEF:scaledlower=lower,8,*",
 						"CDEF:scaledpred=pred,8,*",
+
+						"AREA:scaledh#C9C9C9:Yesterday",
 						"TICK:fail#FDD017:1.0:FFallas",
 						"LINE3:scaledobs#00FF00:In traffic",
 						"LINE1:scaledpred#FF00FF:Prediccion\\n",
