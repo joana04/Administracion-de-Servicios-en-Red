@@ -10,12 +10,14 @@ def sshClient(host, username, password,petitiones,port):
 	ssh_client=paramiko.SSHClient()
 	ssh_client.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 	ssh_client.connect(**datos)
-	entrada,salida,error=ssh_client.exec_command('ls -la')
-	if salida:
-		#print (salida.read())
-		print("TODO COOL")
-	else:
-		print ("Error en la conexión")
+	for i in range(0, int(petitiones)):
+		salida=ssh_client.exec_command('ls -la')
+		if salida:
+			#print (salida.read())
+			print("------ TODO COOL  ------")
+		else:
+			print ("Error en la conexión")
+	ssh_client.close()
 	ssh_client.close()
 
 
