@@ -18,7 +18,6 @@ def sshClient(host, username, password,petitiones,port):
 		else:
 			print ("Error en la conexión")
 	ssh_client.close()
-	ssh_client.close()
 
 
 if __name__ == '__main__':
