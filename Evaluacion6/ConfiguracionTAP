@@ -1,0 +1,7 @@
+
+TAP
+sudo tunctl -u esli
+sudo ifconfig tap0 192.168.202.5/24 up
+sudo route add -net 192.168.202.0  netmask 255.255.255.0 gw 192.168.202.15 dev tap0
+
+sudo route add -net 192.168.232.0/30 gw 192.168.202.15 dev tap0

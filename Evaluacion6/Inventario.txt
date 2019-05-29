@@ -1,0 +1,12 @@
+Router: 192.168.232.1
+SO:  Linux rcp 3.2.0-4-amd64 #1 SMP Debian 3.2.46-1 x86_64
+Ubicación físia:  laboratorio_redes3
+Contacto:  esli-osorio@hotmail.com
+Interfaces:  9
+Carga CPU: 1
+RAM: 250860
+HDD: 6272
+
+-------------------------------------------------------------------------
+
+

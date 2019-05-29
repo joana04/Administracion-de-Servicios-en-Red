@@ -1,0 +1,8 @@
+main noos ofrece el menu para poder realizar las diferentes acciones con los routers
+monitor general es la clase que continee todas las acciones
+	podemos agregar un dispositivo y cuando lo agregamos, automaticamente se agrega al inventario y se descarfga su archivo de configuracion
+	podemos examinar todos los dispositivos, o sea, comparamos los archivos de configuracion atuales y los nuevos de cada router registrado
+	podemso examinar un solo router, paa esto ingresamso la ip, se busca en la lista y se porcede a la descarga y comparacion de dtartup-config
+	podemos enviar algun archivo a algun router
+en el archi e6.py contamos con el cliente ftp para descargar y envair archivos, ai mismo ahi se ecneuntra la funcion de comparacion de archivo y eo cliente telnet
+Herramiestas.py cuenta con un getsmnp para poder obtener la informacion de mib t tambien conla funcion inventario que nos ayuda a agregar los dispositivos a inventario
