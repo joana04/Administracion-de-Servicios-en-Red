@@ -14,9 +14,11 @@ class SMTP_SENSOR():
         self.pop_total = 0.0
 
     def scan_smtp(self):
-        receiver_email_imap = "persona2@redes3.com"
-        receiver_email_pop = "persona3@redes3.com"
+
+        receiver_email_imap = "usuario2@redes3.com"
+        receiver_email_pop = "usuario2@redes3.com"
         smtp =  smtplib.SMTP(self.smtp_server)
+        
 
         # Primero checamos el rendimiento de imap
         try:
@@ -24,6 +26,7 @@ class SMTP_SENSOR():
             smtp.sendmail(self.sender_email, receiver_email_imap, self.message)
             smtp_end = time.time()
             self.smtp_imap_time =(smtp_end - smtp_start)
+            
         except:
             self.smtp_imap_time = "down"
 
@@ -81,19 +84,27 @@ class SMTP_SENSOR():
 #False: no ha encontrado el correo
 #True: encontro el correo
 def imapSCAN():
+    print("Sensor IMAP")
     imap_server = "imap.redes3.com"
-    user = 'persona2'
-    password = '1234'
+    user = 'usuario2'
+    password = 'usuario2'
 
     M = imaplib.IMAP4(imap_server)
     M.login(user, password)
     M.select()
     typ, data = M.search(None, 'ALL')
-    last_mail_index = len(data[0].split())
-    typ, data = M.fetch(last_mail_index, '(RFC822)')
+    #last_mail_index = len(data[0].split())
+    #typ, data = M.fetch(bytes(last_mail_index), '(RFC822)')
 
-    if "SMTP_SENSOR" in data[0][1]:
-        M.store(last_mail_index,'+FLAGS','\\Deleted')
+    for num in data[0].split():
+        typ, data = M.fetch(num, '(RFC822)')
+        #print ("---MENSAJE ----\n"+ str(num)+"----"+ str(data[0][1]))
+
+   # last_mail_index = len(data[0].split())
+
+
+    if "SMTP_SENSOR" in str(data[0][1]):
+        M.store(num,'+FLAGS','\\Deleted')
         M.expunge()
         M.close()
         M.logout()
@@ -104,9 +115,10 @@ def imapSCAN():
         return False
 
 def popSCAN():
+    ("SENSOR POP")
     pop_server = "pop3.redes3.com"
-    user = 'persona3'
-    password = '1234'
+    user = 'usuario2'
+    password = 'usuario2'
     return_value = False
 
     pop_server = poplib.POP3(pop_server,110)
@@ -115,6 +127,7 @@ def popSCAN():
 
     numMessages = len(pop_server.list()[1])
     server_msg, body, octets = pop_server.retr(numMessages)
+    
     for j in body:
         try:
             msg = email.message_from_string(j.decode("utf-8"))
@@ -128,12 +141,13 @@ def popSCAN():
     pop_server.quit()
     return return_value
 
-
-
+"""
 sensor = SMTP_SENSOR()
+
 
 while(True):
     sensor.scan_smtp()
     print(sensor.imap_total)
-    print(sensor.imap_total)
+    print(sensor.pop_total)
     time.sleep(2)
+"""

@@ -1,0 +1,195 @@
+from fpdf import FPDF, HTMLMixin
+from Rendimiento import Rendimiento
+#sudo pip install pillow
+#sudo pip install fpdf2
+def createPdf(rendimiento):
+    html = '<h1 align="center">Administracion de Rendimiento</h1>'
+    html += '<h3>No. de Equipo: 4 (Tanibabys)</h3>'
+    html += '<h3>Integrantes:</h3>'
+    html += '<ul>'
+    html += '<li>Aburto Perez Mario</li>'
+    html += '<li>Gomez Gonzalez Kevin</li>'
+    html += '<li>Melendez Padilla Mauricio</li>'
+    html += '<li>Osorio Rodriguez Esli</li>'
+    html += '<li>Zamora Galloso Fernando</li>'
+    html += '</ul>'
+    html += '<br/>'
+    html += '<h3>Fecha de Elaboracion: 08/05/2019 </h3>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="40%">Sistema Operativo del Servidor</th>'
+    html += '<th width="30%">Tiempo de actividad del Servidor</th>'
+    html += '<th width="30%">Numero de interfaces</th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="center" width="40%">Linux</td>'
+    html += '<td align="center" width="30%">' + str(rendimiento.getTimeActivity()) + '</td>'
+    html += '<td align="center" width="30%">' + str(rendimiento.getNumberInterfaces()) + '</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    html += '<br/>'
+    html += '<h3>Informacion grafica del CPU:</h3>'
+    html += '<img src="' + str(rendimiento.getPathImageCPU()) + '" width="256" height="171">'
+    html += '<br/>'
+    html += '<h3>Informacion grafica de uso de memoria RAM:</h3>'
+    html += '<img src="' + str(rendimiento.getPatImageRAM()) + '" width="256" height="171">'
+    html += '<br/>'
+    html += '<h3>Informacion grafica de uso de Disco Duro:</h3>'
+    html += '<img src="' + str(rendimiento.getPathImageHDD()) + '" width="256" height="171">'
+    html += '<br/>'
+    html += '<h3>Supervision de Servidores</h3>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="50%">Sensor SMTP y POP3</th>'
+    html += '<th width="50%"></th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de respuesta del servidor SMTP</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getResponseSMTP()) + ' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de respuesta del servidor POP3</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getResponseIMAP()) + ' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Suma de ambos tiempos de respuesta</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getResponseSmtpImap()) +' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Status del servidor</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getStatusSMTP()) +'</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="50%">Sensor HTTP</th>'
+    html += '<th width="50%"></th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de respuesta de una solicitud HTTP</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getResponseHTTP()) +' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Bytes recibidos</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getBytesReceiveHTTP()) +' bytes</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Ancho de banda</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getSpeedDownload()) + '</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Status del servidor</td>'
+    html += '<td align="left" width="50%">' + str(rendimiento.getStatusHTTP()) + '</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="50%">Sensor FTP</th>'
+    html += '<th width="50%"></th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de respuesta del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getTimeResponseFTP()) + ' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Respuesta del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getResponseFTP()) +' </td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Status del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getstatusFTP()) +'</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="50%">Sensor DNS</th>'
+    html += '<th width="50%"></th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de respuesta del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getResponseDNS()) +' s</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Status del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getStatusDNS()) +'</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    html += '<table border="0" >'
+    html += '<thead>'
+    html += '<tr>'
+    html += '<th width="50%">Sensor Acceso Remoto</th>'
+    html += '<th width="50%"></th>'
+    html += '</tr>'
+    html += '</thead>'
+    html += '<tbody>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Numero de conexiones</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getNumberConectionsSSH()) +'</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Trafico enviado y recibido</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getOutputTraficSSH()) +'</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Tiempo de actividad de las conexiones</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getInputTraficSSH()) +'</td>'
+    html += '</tr>'
+    html += '<tr>'
+    html += '<td align="left" width="50%">Status del servidor</td>'
+    html += '<td align="left" width="50%">'+ str(rendimiento.getStatusSSH()) +'</td>'
+    html += '</tr>'
+    html += '</tbody>'
+    html += '</table>'
+    class MyFPDF(FPDF, HTMLMixin):
+        pass
+    pdf = MyFPDF()
+    pdf.add_page()
+    pdf.write_html(html)
+    pdf.output('ReporteAdministracionRendimiento.pdf', 'F')
+
+"""rendimiento = Rendimiento()
+rendimiento.setSO("Fedora")
+rendimiento.setTimeActivity(10)
+rendimiento.setNumberInterfaces(2)
+rendimiento.setResponseSMTP(20)
+rendimiento.setResponseIMAP(23)
+rendimiento.setStatusSMTP("Ready")
+rendimiento.setResponseHTTP(200)
+rendimiento.setBytesReceiveHTTP(30)
+rendimiento.setSpeedDownload(58)
+rendimiento.setStatusHTTP("Ready")
+rendimiento.setResponseFTP(200)
+rendimiento.setTimeResponseFTP(56)
+rendimiento.setStatusFTP("Ready")
+rendimiento.setServerFileCountFTP(3)
+rendimiento.setResponseDNS(45)
+rendimiento.setStatusDNS("Ready")
+rendimiento.setNumberConectionsSSH(8)
+rendimiento.setInputTraficSSH(45)
+rendimiento.setOutputTraficSSH(89)
+rendimiento.setTimeSSH(34)
+rendimiento.setStatusSSH("Ready")
+rendimiento.setPathImageRAM("mila.jpg")
+rendimiento.setPathImageHDD("mila.jpg")
+rendimiento.setPathImageCPU("mila.jpg")
+createPdf(rendimiento)"""
