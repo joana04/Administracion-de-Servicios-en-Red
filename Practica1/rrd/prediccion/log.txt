@@ -1,0 +1,166 @@
+
+	Falla
+Inicio :  Mon Mar 25 19:20:54 2019 
+Fin:  Mon Mar 25 19:20:54 2019 
+fmin=0, fmax=1,flast=
+
+	Falla
+Inicio :  Mon Mar 25 19:21:03 2019 
+Fin:  Mon Mar 25 19:21:07 2019 
+fmin=0, fmax=1,flast=
+
+	Falla
+Inicio :  Mon Mar 25 19:21:14 2019 
+Fin:  Mon Mar 25 19:21:14 2019 
+fmin=0, fmax=1,flast=
+
+	Falla
+Inicio :  Tue Mar 26 19:49:43 2019 
+Fin: 
+	Falla
+Inicio :  Tue Mar 26 19:49:46 2019 
+Fin:  Tue Mar 26 19:49:53 2019 
+	Falla
+Inicio :  Tue Mar 26 20:38:33 2019 
+Fin:  Tue Mar 26 20:38:39 2019 
+	Falla
+Inicio :  Tue Mar 26 20:38:51 2019 
+Fin:  Tue Mar 26 20:38:39 2019 
+	Falla
+Inicio :  Tue Mar 26 20:39:06 2019 
+Fin:  Tue Mar 26 20:38:39 2019 
+	Falla
+Inicio :  Tue Mar 26 20:39:27 2019 
+Fin:  Tue Mar 26 20:38:39 2019 
+	Falla
+Inicio :  Tue Mar 26 20:47:21 2019 
+Fin:  Tue Mar 26 20:47:27 2019 
+	Falla
+Inicio :  Tue Mar 26 20:47:41 2019 
+Fin:  Tue Mar 26 20:47:45 2019 
+	Falla
+Inicio :  Tue Mar 26 20:51:44 2019 
+Fin:  Tue Mar 26 20:51:51 2019 
+	Falla
+Inicio :  Tue Mar 26 20:52:01 2019 
+Fin:  Tue Mar 26 20:52:05 2019 
+	Falla
+Inicio :  Tue Mar 26 20:52:23 2019 
+Fin:  Tue Mar 26 20:52:27 2019 
+	Falla
+Inicio :  Tue Mar 26 20:53:43 2019 
+Fin:  Tue Mar 26 20:53:48 2019 
+	Falla
+Inicio :  Tue Mar 26 20:56:03 2019 
+Fin:  Tue Mar 26 20:56:07 2019 
+	Falla
+Inicio :  Tue Mar 26 20:56:44 2019 
+Fin:  Tue Mar 26 20:56:49 2019 
+	Falla
+Inicio :  Tue Mar 26 20:57:17 2019 
+Fin:  Tue Mar 26 20:57:22 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:00:20 2019 
+Fin:  Tue Mar 26 21:00:26 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:00:47 2019 
+Fin:  Tue Mar 26 21:00:51 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:08:19 2019 
+Fin:  Tue Mar 26 21:08:22 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:10:09 2019 
+Fin:  Tue Mar 26 21:10:14 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:10:50 2019 
+Fin:  Tue Mar 26 21:10:52 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:25:12 2019 
+Fin:  Tue Mar 26 21:25:18 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:25:29 2019 
+Fin:  Tue Mar 26 21:25:36 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:28:32 2019 
+Fin:  Tue Mar 26 21:28:34 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:28:44 2019 
+Fin:  Tue Mar 26 21:28:47 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:28:37 2019 
+Fin:  Tue Mar 26 21:28:42 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:29:07 2019 
+Fin:  Tue Mar 26 21:29:08 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:30:38 2019 
+Fin:  Tue Mar 26 21:30:39 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:30:55 2019 
+Fin:  Tue Mar 26 21:30:57 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:30:55 2019 
+Fin:  Tue Mar 26 21:30:57 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:31:48 2019 
+Fin:  Tue Mar 26 21:31:49 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:31:52 2019 
+Fin:  Tue Mar 26 21:31:54 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:31:46 2019 
+Fin:  Tue Mar 26 21:31:54 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:32:57 2019 
+Fin:  Tue Mar 26 21:33:00 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:37:01 2019 
+Fin:  Tue Mar 26 21:37:02 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:38:14 2019 
+Fin:  Tue Mar 26 21:38:16 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:38:58 2019 
+Fin:  Tue Mar 26 21:38:59 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:40:56 2019 
+Fin:  Tue Mar 26 21:41:00 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:41:33 2019 
+Fin:  Tue Mar 26 21:41:34 2019 
+	Falla lin
+Inicio :  Tue Mar 26 21:41:34 2019 
+Fin:  Tue Mar 26 21:41:36 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 21:43:31 2019 
+Fin:  Tue Mar 26 21:43:33 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:21:06 2019 
+Fin:  Tue Mar 26 22:21:12 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:05 2019 
+Fin:  Tue Mar 26 22:24:10 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 22:24:04 2019 
+Fin:  Tue Mar 26 22:24:09 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:19 2019 
+Fin:  Tue Mar 26 22:24:20 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:27 2019 
+Fin:  Tue Mar 26 22:24:28 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:34 2019 
+Fin:  Tue Mar 26 22:24:36 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:49 2019 
+Fin:  Tue Mar 26 22:24:51 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:24:59 2019 
+Fin:  Tue Mar 26 22:25:01 2019 
+	Falla lin
+Inicio :  Tue Mar 26 22:25:59 2019 
+Fin:  Tue Mar 26 22:26:01 2019 
+	Falla prueba
+Inicio :  Tue Mar 26 22:25:59 2019 
+Fin:  Tue Mar 26 22:26:01 2019 
